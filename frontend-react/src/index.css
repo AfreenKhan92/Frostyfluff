@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+/* ── Custom Design Tokens ─────────────────────────── */
+@theme {
+  --color-primary: #864e5a;
+  --color-primary-container: #ffb7c5;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #7b4551;
+  --color-on-primary-fixed: #360c19;
+  --color-on-primary-fixed-variant: #6b3743;
+  --color-primary-fixed: #ffd9df;
+  --color-primary-fixed-dim: #fbb3c1;
+  --color-inverse-primary: #fbb3c1;
+
+  --color-secondary: #685e31;
+  --color-secondary-container: #f1e3a9;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #6e6436;
+  --color-on-secondary-fixed: #211b00;
+  --color-on-secondary-fixed-variant: #4f471b;
+  --color-secondary-fixed: #f1e3a9;
+  --color-secondary-fixed-dim: #d4c78f;
+
+  --color-tertiary: #625f4e;
+  --color-tertiary-container: #cfcab6;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #585545;
+  --color-on-tertiary-fixed: #1e1c0f;
+  --color-on-tertiary-fixed-variant: #4a4737;
+  --color-tertiary-fixed: #e8e3cd;
+  --color-tertiary-fixed-dim: #ccc7b2;
+
+  --color-background: #fff8f7;
+  --color-on-background: #201a1b;
+  --color-surface: #fff8f7;
+  --color-on-surface: #201a1b;
+  --color-surface-variant: #ebe0e0;
+  --color-on-surface-variant: #514345;
+  --color-surface-dim: #e3d7d8;
+  --color-surface-bright: #fff8f7;
+  --color-surface-container: #f7ebec;
+  --color-surface-container-low: #fdf1f1;
+  --color-surface-container-high: #f1e5e6;
+  --color-surface-container-highest: #ebe0e0;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-tint: #864e5a;
+  --color-inverse-surface: #352f30;
+  --color-inverse-on-surface: #faeeef;
+
+  --color-outline: #837375;
+  --color-outline-variant: #d6c2c4;
+
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #93000a;
+
+  --font-body: "Be Vietnam Pro", sans-serif;
+  --font-heading: "Plus Jakarta Sans", sans-serif;
+  --font-elegant: "Playfair Display", serif;
+}
+
+/* ── Base Styles ──────────────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-on-background);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Material Symbols Config ─────────────────────── */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.material-symbols-outlined.filled {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ── Scrollbar Styling ───────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-container);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-outline-variant);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-outline);
+}
+
+/* ── Animations ──────────────────────────────────── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out both;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out both;
+}
+
+.animation-delay-100 { animation-delay: 0.1s; }
+.animation-delay-200 { animation-delay: 0.2s; }
+.animation-delay-300 { animation-delay: 0.3s; }
+.animation-delay-400 { animation-delay: 0.4s; }
+
+.animate-slide-in-right {
+  animation: slideInRight 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
